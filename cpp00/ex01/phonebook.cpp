@@ -1,6 +1,6 @@
 #include "phonebook.hpp"
 
-void PhoneBook::addContact(int num) {
+void PhoneBook::addContact() {
 	std::cout << "First name : ";
 	std::getline(std::cin, firstName);
 	std::cout << "Last name : ";
@@ -14,5 +14,6 @@ void PhoneBook::addContact(int num) {
 }
 
 void PhoneBook::displayAll(int num) {
-	
+	std::cout << std::right << std::setw(10) << "index";
+	std::cout << "|";
 }

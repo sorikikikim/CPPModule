@@ -7,8 +7,8 @@
 
 class PhoneBook {
 	public:
-		void addContact(int num);
-		void displayAll(int num);
+		void addContact();
+		void displayAll();
 		void searchContact();
 
 	private:

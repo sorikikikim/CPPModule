@@ -2,7 +2,7 @@ NAME = phonebook
 HEADER = $(addsuffix .hpp, $(NAME))
 SRCS = ./phonebook.cpp ./main.cpp
 OBJS = $(SRCS:.cpp=.o)
-COMPILER = c++
+COMPILER = clang++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 
