@@ -1,0 +1,23 @@
+NAME = phonebook
+HEADER = $(addsuffix .hpp, $(NAME))
+SRCS = ./phonebook.cpp ./main.cpp
+OBJS = $(SRCS:.cpp=.o)
+COMPILER = c++
+FLAGS = -Wall -Wextra -Werror -std=c++98
+RM = rm -f
+
+all : $(NAME)
+
+$(NAME) : $(OBJS)
+	$(COMPILER) $(FLAGS) $^ -o $@
+
+.cpp.o : $(HEADER)
+	$(COMPILER) $(FLAGS) -c $< -o $@
+
+clean : 
+	$(RM) $(OBJS)
+
+fclean : clean
+	$(RM) $(NAME)
+
+re : fclean all
