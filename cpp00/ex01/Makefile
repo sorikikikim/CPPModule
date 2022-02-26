@@ -1,6 +1,5 @@
 NAME = phonebook
-HEADER = $(addsuffix .hpp, $(NAME))
-SRCS = ./phonebook.cpp ./main.cpp
+SRCS = ./Phonebook.cpp ./Contact.cpp ./main.cpp
 OBJS = $(SRCS:.cpp=.o)
 COMPILER = clang++
 FLAGS = -Wall -Wextra -Werror -std=c++98
@@ -11,7 +10,7 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	$(COMPILER) $(FLAGS) $^ -o $@
 
-.cpp.o : $(HEADER)
+.cpp.o :
 	$(COMPILER) $(FLAGS) -c $< -o $@
 
 clean : 

@@ -1,19 +1,30 @@
-#include "phonebook.hpp"
+#include "Phonebook.hpp"
 
-void PhoneBook::addContact() {
-	std::cout << "First name : ";
-	std::getline(std::cin, firstName);
-	std::cout << "Last name : ";
-	std::getline(std::cin, lastName);
-	std::cout << "Nickname : ";
-	std::getline(std::cin, nickname);
-	std::cout << "Phone number : ";
-	std::getline(std::cin, phoneNumber);
-	std::cout << "Darkest secret : ";
-	std::getline(std::cin, darkestSecret);
+
+void Phonebook::addContact(int num) {
+	contact[num].update();
 }
 
-void PhoneBook::displayAll(int num) {
+void Phonebook::displayColumns() {
 	std::cout << std::right << std::setw(10) << "index";
 	std::cout << "|";
+	std::cout << std::right << std::setw(10) << "first name";
+	std::cout << "|";
+	std::cout << std::right << std::setw(10) << "last name";
+	std::cout << "|";
+	std::cout << std::right << std::setw(10) << "nickname" << std::endl;
+}
+
+void Phonebook::displayContacts() {
+	displayColumns();
+	for (int i = 0; i < 8; i++) {
+		contact[i].showNames(i);
+		std::cout << std::endl;
+	}
+}
+
+void Phonebook::searchContact() {
+	std::cin >> searchNum;
+	contact[searchNum - 1].showContact();
+
 }

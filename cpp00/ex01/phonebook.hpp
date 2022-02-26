@@ -1,22 +1,22 @@
-#ifndef PHONEBOOK_H
-# define PHONEBOOK_H
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include "Contact.hpp"
 
-class PhoneBook {
+
+class Phonebook {
+	private: 
+		Contact contact[8];
+		int searchNum;
+		void displayColumns();
+
 	public:
-		void addContact();
-		void displayAll();
+		void addContact(int num);
+		void displayContacts();
 		void searchContact();
-
-	private:
-		std::string firstName;
-		std::string lastName;
-		std::string nickname;
-		std::string phoneNumber;
-		std::string darkestSecret;
 };
 
 #endif
