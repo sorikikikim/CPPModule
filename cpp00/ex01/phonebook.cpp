@@ -1,8 +1,13 @@
 #include "Phonebook.hpp"
 
+Phonebook::Phonebook()
+:addNum(0)
+{
+}
 
-void Phonebook::addContact(int num) {
-	contact[num].update();
+void Phonebook::addContact() {
+	contact[addNum % 8].update();
+	addNum++;
 }
 
 void Phonebook::displayColumns() {
@@ -24,7 +29,12 @@ void Phonebook::displayContacts() {
 }
 
 void Phonebook::searchContact() {
-	std::cin >> searchNum;
-	contact[searchNum - 1].showContact();
+	int searchIndex; 
 
+	std::cin >> searchIndex;
+	searchIndex -= 1;
+	if (searchIndex >= 0 && (searchIndex < 8 && searchIndex < addNum))
+		contact[searchIndex].showContact();
+	else
+		std::cout << "Enter only valid index" << std::endl;
 }

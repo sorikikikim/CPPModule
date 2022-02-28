@@ -10,11 +10,12 @@
 class Phonebook {
 	private: 
 		Contact contact[8];
-		int searchNum;
+		int addNum;
 		void displayColumns();
 
 	public:
-		void addContact(int num);
+		Phonebook();
+		void addContact();
 		void displayContacts();
 		void searchContact();
 };
