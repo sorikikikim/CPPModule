@@ -1,0 +1,4 @@
+Position of the first character to be copied as a substring.
+If this is equal to the string length, the function returns an empty string.
+If this is greater than the string length, it throws out_of_range.
+Note: The first character is denoted by a value of 0 (not 1).
