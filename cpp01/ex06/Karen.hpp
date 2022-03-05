@@ -11,7 +11,7 @@ class Karen {
         typedef void (Karen::*funcPtr)(void);
     private:
         static funcPtr fptr[4];
-        int complainToNum( std::string level );
+        int complainToNum(std::string level);
         void debug(void);
         void info(void);
         void warning(void);
