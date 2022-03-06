@@ -10,7 +10,7 @@
 class Phonebook {
 	private: 
 		Contact contact[8];
-		int addNum;
+		int _addNum;
 		void displayColumns();
 
 	public:

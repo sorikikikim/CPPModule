@@ -10,12 +10,12 @@ int main() {
     std::string* stringPTR = &str;
     std::string& stringREF = str;
 
-    std::cout<< "print 'HI THIS IS BRAIN'" <<std::endl;
-    std::cout<< *stringPTR <<std::endl;
-    std::cout<< stringREF <<std::endl;
+    std::cout << "print 'HI THIS IS BRAIN'" << std::endl;
+    std::cout << *stringPTR <<std::endl;
+    std::cout << stringREF <<std::endl;
 
-    std::cout<< "address of str" <<std::endl;
-    std::cout<< stringPTR <<std::endl;
-    std::cout<< &stringREF <<std::endl;
+    std::cout << "address of str" << std::endl;
+    std::cout << stringPTR << std::endl;
+    std::cout << &stringREF << std::endl;
 
 }

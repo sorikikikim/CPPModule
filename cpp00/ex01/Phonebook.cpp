@@ -1,9 +1,8 @@
 #include "Phonebook.hpp"
 
 Phonebook::Phonebook()
-:addNum(0)
-{
-}
+:addNum(0) {
+this->_addNum}
 
 void Phonebook::addContact() {
 	contact[addNum % 8].update();
@@ -29,7 +28,7 @@ void Phonebook::displayContacts() {
 }
 
 void Phonebook::searchContact() {
-	int searchIndex; 
+	int searchIndex; //search_index;
 
 	std::cin >> searchIndex;
 	searchIndex -= 1;
