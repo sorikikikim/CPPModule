@@ -7,7 +7,14 @@
 
 
 class Fixed {
+    private:
+        int store_fixed_point;
+        static const int store_fractional_bits = 8;
 
+    public:
+        Fixed();
+        ~Fixed();
+        
 };
 
 
