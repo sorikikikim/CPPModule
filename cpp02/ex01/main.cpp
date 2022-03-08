@@ -2,7 +2,8 @@
 // Created by Sori Kim on 3/8/22.
 //
 
-#include <iostream>
+#include "Fixed.hpp"
+
 int main( void ) {
     Fixed a;
     Fixed const b( 10 );

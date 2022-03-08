@@ -42,10 +42,10 @@ void Fixed::setRawBits(const int raw) {
     _fixed_point_value = raw;
 }
 
-float toFloat( void ) const {
-
+float Fixed::toFloat( void ) const {
+    _fixed_point_value << 8;
 }
 
-int toInt( void ) const {
-
+int Fixed::toInt( void ) const {
+    return _fixed_point_value >> 8;
 }

@@ -5,6 +5,7 @@
 #ifndef CPP_FIXED_HPP
 #define CPP_FIXED_HPP
 
+#include <iostream>
 
 class Fixed {
     private:
