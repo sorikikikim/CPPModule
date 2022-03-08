@@ -2,7 +2,7 @@
 // Created by 김소리 on 2022/03/05.
 //
 
-#include <iostream>
+#include "Fixed.hpp"
 
 int main( void ) {
     Fixed a;

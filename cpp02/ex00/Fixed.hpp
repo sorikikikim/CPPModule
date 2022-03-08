@@ -5,18 +5,20 @@
 #ifndef FIXED_HPP
 #define FIXED_HPP
 
+#include <iostream>
 
 class Fixed {
     private:
-        int store_fixed_point;
-        static const int store_fractional_bits = 8;
+        int _fixed_point_value;
+        static const int _frac_bits = 8;
 
     public:
         Fixed();
         Fixed(const Fixed& fixed);
-        Fixed& operator=(const Fixed& fixed);
+        Fixed& operator=( const Fixed& fixed );
         ~Fixed();
-
+        int getRawBits( void ) const;
+        void setRawBits( int const raw );
 };
 
 
