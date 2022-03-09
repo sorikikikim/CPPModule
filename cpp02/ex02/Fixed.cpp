@@ -3,7 +3,7 @@
 //
 
 #include "Fixed.hpp"
-
+#include <cmath>
 Fixed::Fixed() : _fixed_point_value(0) {
 
 }
@@ -12,11 +12,11 @@ Fixed::Fixed(const Fixed& fixed) {
     *this = fixed;
 }
 
-Fixed::Fixed(int fixed) : _fixed_point_value(fixed >> _frac_bits) {
+Fixed::Fixed(int fixed) : _fixed_point_value(fixed << _frac_bits) {
 
 }
 
-Fixed::Fixed(float fixed) : _fixed_point_value(static_cast<float>(roundf(fixed * (1 << _frac_bits)))) {
+Fixed::Fixed(float fixed) : _fixed_point_value(static_cast<int>(roundf(fixed * (1 << _frac_bits)))) {
 
 }
 
@@ -75,25 +75,25 @@ bool Fixed::operator!=(const Fixed &fixed) {
 
 Fixed Fixed::operator+(const Fixed& fixed) {
     Fixed ret;
-    ret.setRawBits(this->toFloat() + fixed.toFloat());
+    ret.setRawBits(this->getRawBits() + fixed.getRawBits());
     return ret;
 }
 
 Fixed Fixed::operator-(const Fixed& fixed) {
     Fixed ret;
-    ret.setRawBits(this->toFloat() - fixed.toFloat());
+    ret.setRawBits(this->getRawBits() - fixed.getRawBits());
     return ret;
 }
 
 Fixed Fixed::operator*(const Fixed& fixed) {
     Fixed ret;
-    ret.setRawBits(this->toFloat() * fixed.toFloat());
+    ret.setRawBits(this->getRawBits() * fixed.getRawBits() / (1 << _frac_bits));
     return ret;
 }
 
 Fixed Fixed::operator/(const Fixed& fixed) {
     Fixed ret;
-    ret.setRawBits(this->toFloat() / fixed.toFloat());
+    ret.setRawBits((this->getRawBits() / fixed.getRawBits()) * (1 << _frac_bits));
     return ret;
 }
 
