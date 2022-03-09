@@ -8,7 +8,7 @@ Fixed::Fixed() : _fixed_point_value(0) {
     std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(int fixed) : _fixed_point_value(fixed << _frac_bits) {
+Fixed::Fixed(int fixed) : _fixed_point_value(fixed >> _frac_bits) {
     std::cout << "Int constructor called" << std::endl;
 }
 
@@ -22,15 +22,15 @@ Fixed::Fixed(const Fixed& fixed) {
     *this = fixed;
 }
 
+Fixed::~Fixed() {
+    std::cout << "Destructor called" << std::endl;
+}
+
 Fixed& Fixed::operator=(const Fixed& fixed)
 {
     std::cout << "Assignation operator called" << std::endl;
     _fixed_point_value = fixed.getRawBits();
     return *this;
-}
-
-Fixed::~Fixed() {
-    std::cout << "Destructor called" << std::endl;
 }
 
 std::ostream& operator<<(std::ostream& out, Fixed const& fixed) {
