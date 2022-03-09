@@ -33,19 +33,12 @@ void Fixed::setRawBits(const int raw) {
 }
 
 Fixed& Fixed::operator=(const Fixed& fixed) {
+    _fixed_point_value = fixed.getRawBits();
     return *this;
 }
 
 std::ostream& operator<<(std::ostream& out, Fixed const& fixed) {
     return out << fixed.toFloat();
-}
-
-int Fixed::getRawBits() const {
-    return _fixed_point_value;
-}
-
-void Fixed::setRawBits(const int raw) {
-    _fixed_point_value = raw;
 }
 
 float Fixed::toFloat( void ) const {
@@ -105,6 +98,7 @@ Fixed Fixed::operator/(const Fixed& fixed) {
 }
 
 //전위 후위
+/*
 Fixed& Fixed::operator++(void) {
     ++_fixed_point;
     return *this;
@@ -133,4 +127,4 @@ Fixed& Fixed::operator=(const Fixed& f) {
     if (this != &f)
         _fixed_point = f.getRawBits();
     return *this;
-}
+}*/

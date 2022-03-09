@@ -5,6 +5,7 @@
 #ifndef CPP_FIXED_HPP
 #define CPP_FIXED_HPP
 
+#include <iostream>
 
 class Fixed {
     private:
@@ -23,7 +24,26 @@ class Fixed {
         void setRawBits( int const raw );
         float toFloat( void ) const;
         int toInt( void ) const;
+
+    bool	operator>(const Fixed& fx);
+    bool	operator<(const Fixed& fx);
+    bool	operator>=(const Fixed& fx);
+    bool	operator<=(const Fixed& fx);
+    bool	operator==(const Fixed& fx);
+    bool	operator!=(const Fixed& fx);
+    Fixed	operator+(const Fixed& fx);
+    Fixed	operator-(const Fixed& fx);
+    Fixed	operator*(const Fixed& fx);
+    Fixed	operator/(const Fixed& fx);
+    Fixed&	operator++();
+    Fixed&	operator--();//전위
+    Fixed	operator++(int);
+    Fixed	operator--(int);//후위
+
+
 };
+
+std::ostream& operator<<(std::ostream& out, Fixed const& fx);
 
 
 #endif //CPP_FIXED_HPP
