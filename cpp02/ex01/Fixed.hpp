@@ -26,5 +26,6 @@ class Fixed {
         int toInt( void ) const;
 };
 
+std::ostream& operator<<(std::ostream& out, Fixed const& fixed);
 
 #endif //CPP_FIXED_HPP
