@@ -52,3 +52,4 @@ float Fixed::toFloat( void ) const {
 int Fixed::toInt( void ) const {
     return _fixed_point_value >> _frac_bits;
 }
+ 
