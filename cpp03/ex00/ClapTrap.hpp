@@ -10,14 +10,16 @@
 class ClapTrap {
     public:
         ClapTrap(const std::string& name);
+        ~ClapTrap();
         void attack(std::string const & target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
     private:
-        std::string& _name;
-        unsigned int _hit;
-        unsigned int _energy;
-        unsigned int _damage;
+        const std::string& _name;
+        int _hit; //hp, 체력
+        int _energy; //마나
+        int _damage;
+        int _attack_energy;
 };
 
 
