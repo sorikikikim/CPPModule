@@ -2,19 +2,26 @@
 // Created by 김소리 on 2022/03/10.
 //
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main() {
-    ClapTrap ct("sorkim");
+    // ScavTrap st("sorkim");
 
-    ct.attack("enemy");
-    ct.takeDamage(30);
-    ct.beRepaired(50);
-    ct.takeDamage(100);
-    ct.beRepaired(10);
-    ct.attack("enemy");
-    ct.beRepaired(5);
-    ct.attack("enemy");
-    ct.attack("enemy");
-    ct.attack("enemy");
+    // st.attack("enemy");
+    // st.takeDamage(30);
+    // st.beRepaired(50);
+    // st.takeDamage(100);
+    // st.beRepaired(10);
+    // st.attack("enemy");
+    // st.beRepaired(5);
+    // st.attack("enemy");
+    // st.attack("enemy");
+    // st.attack("enemy");
+    // st.guardGate();
+
+
+    ClapTrap* ct = new ScavTrap("sorkim");
+
+    ct->attack("enemy");
+    delete ct;
 }

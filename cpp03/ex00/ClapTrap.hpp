@@ -15,7 +15,7 @@ class ClapTrap {
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
     private:
-        const std::string& _name;
+        std::string _name;
         int _hit; //hp, 체력
         int _energy; //마나
         int _damage;

@@ -2,7 +2,7 @@ NAME = ex01
 SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp
 OBJS = $(SRCS:.cpp=.o)
 COMPILER = clang++
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -std=c++98
 RM = rm -f
 
 all : $(NAME)
