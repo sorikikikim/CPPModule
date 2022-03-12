@@ -10,12 +10,12 @@ _hit(10),
 _energy(10),
 _damage(0),
 _attack_energy(2) {
-    std::cout << "ClapTrap " << _name << "'s constructor is called." << std::endl;
+    std::cout << "ClapTrap <" << _name << "> constructor is called." << std::endl;
     std::cout << std::endl;
 }
 
 ClapTrap::~ClapTrap() {
-    std::cout << "ClapTrap " << _name << "'s destructor is called." << std::endl;
+    std::cout << "ClapTrap <" << _name << "> destructor is called." << std::endl;
 }
 
 void ClapTrap::attack(std::string const & target) {
