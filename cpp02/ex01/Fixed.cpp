@@ -8,7 +8,7 @@ Fixed::Fixed() : _fixed_point_value(0) {
     std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(int fixed) : _fixed_point_value(fixed >> _frac_bits) {
+Fixed::Fixed(int fixed) : _fixed_point_value(fixed << _frac_bits) {
     std::cout << "Int constructor called" << std::endl;
 }
 
@@ -33,7 +33,7 @@ Fixed& Fixed::operator=(const Fixed& fixed)
     return *this;
 }
 
-std::ostream& operator<<(std::ostream& out, Fixed const& fixed) {
+std::ostream& operator<<(std::ostream& out, const Fixed& fixed) {
     return out << fixed.toFloat();
 }
 
