@@ -1,5 +1,5 @@
-NAME = ex02
-SRCS = main.cpp Fixed.cpp
+NAME = ex00
+SRCS = main.cpp 
 OBJS = $(SRCS:.cpp=.o)
 COMPILER = clang++
 FLAGS = -Wall -Wextra -Werror -std=c++98
@@ -19,4 +19,4 @@ clean :
 fclean : clean
 	$(RM) $(NAME)
 
-re : fclean allac
+re : fclean all

@@ -68,11 +68,11 @@ bool Fixed::operator<=(const Fixed& fixed) {
 }
 
 bool Fixed::operator==(const Fixed& fixed) {
-    return _fixed_point_value <= fixed.getRawBits();
+    return _fixed_point_value == fixed.getRawBits();
 }
 
 bool Fixed::operator!=(const Fixed& fixed) {
-    return _fixed_point_value <= fixed.getRawBits();
+    return _fixed_point_value != fixed.getRawBits();
 }
 
 //사칙 연산
