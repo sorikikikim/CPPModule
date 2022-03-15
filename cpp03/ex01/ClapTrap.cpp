@@ -11,7 +11,6 @@ _energy(10),
 _damage(0),
 _attack_energy(2) {
     std::cout << "ClapTrap <" << _name << "> constructor is called." << std::endl;
-    std::cout << std::endl;
 }
 
 ClapTrap::~ClapTrap() {
@@ -29,7 +28,6 @@ void ClapTrap::attack(std::string const & target) {
         std::cout << "ClapTrap <" << _name << "> attack <" << target <<">, causing <"
                 << _damage << "> points of damage!" << std::endl;
     }
-    std::cout << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
@@ -38,13 +36,12 @@ void ClapTrap::takeDamage(unsigned int amount) {
     int amount_int = static_cast<int>(amount);
     if (_hit - amount_int <= 0) {
         _hit = 0;
-        std::cout << "ClapTrap " << _name << " died..." << std::endl;
+        std::cout << "ClapTrap <" << _name << "> died..." << std::endl;
     }
     else {
         _hit -= amount_int;
-        std::cout << "ClapTrap " << _name << "'s Hit point is " << _hit << "." << std::endl;
+        std::cout << "ClapTrap <" << _name << ">'s Hit point is <" << _hit << ">." << std::endl;
     }
-    std::cout << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
@@ -52,6 +49,5 @@ void ClapTrap::beRepaired(unsigned int amount) {
 
     int amount_int = static_cast<int>(amount);
     _hit += amount_int;
-    std::cout << "ClapTrap " << _name << "'s Hit point is " << _hit << "." << std::endl;
-    std::cout << std::endl;
+    std::cout << "ClapTrap <" << _name << ">'s Hit point is <" << _hit << ">." << std::endl;
 }

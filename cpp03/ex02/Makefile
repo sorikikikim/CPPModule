@@ -1,5 +1,5 @@
-NAME = ex01
-SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp
+NAME = ex02
+SRCS = main.cpp ClapTrap.cpp FragTrap.cpp
 OBJS = $(SRCS:.cpp=.o)
 COMPILER = clang++
 FLAGS = -Wall -Wextra -Werror -std=c++98
