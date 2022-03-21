@@ -9,15 +9,12 @@ class Cat : public Animal
 	public:
 
 		Cat();
-		Cat( Cat const & src );
+		Cat( Cat const & dog);
 		~Cat();
 
-		Cat &		operator=( Cat const & rhs );
-
-	private:
+		Cat &		operator=( Cat const & dog );
+		void 	makeSound() const;
 
 };
-
-std::ostream &			operator<<( std::ostream & o, Cat const & i );
 
 #endif /* ************************************************************* CAT_H */
