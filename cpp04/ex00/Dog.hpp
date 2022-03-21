@@ -9,15 +9,12 @@ class Dog : public Animal
 	public:
 
 		Dog();
-		Dog( Dog const & src );
+		Dog( Dog const & dog );
 		~Dog();
 
-		Dog &		operator=( Dog const & rhs );
-
-	private:
+		Dog &		operator=( Dog const & dog );
+		void 	makeSound() const;
 
 };
-
-std::ostream &			operator<<( std::ostream & o, Dog const & i );
 
 #endif /* ************************************************************* DOG_H */
