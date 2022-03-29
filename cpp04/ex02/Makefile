@@ -1,6 +1,5 @@
-NAME = ex00
-SRCS = main.cpp Dog.cpp Cat.cpp Animal.cpp \
-		WrongDog.cpp WrongCat.cpp WrongAnimal.cpp
+NAME = ex02
+SRCS = main.cpp Dog.cpp Cat.cpp Animal.cpp Brain.cpp
 OBJS = $(SRCS:.cpp=.o)
 COMPILER = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
