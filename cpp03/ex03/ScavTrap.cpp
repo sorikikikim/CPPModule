@@ -4,6 +4,10 @@
 
 #include "ScavTrap.hpp"
 
+ScavTrap::ScavTrap() {
+    std::cout << "ScavTrap default constructor is called." << std::endl;
+}
+
 ScavTrap::ScavTrap(const std::string& name)
 :ClapTrap(name) {
     _hit = 100;
@@ -13,6 +17,22 @@ ScavTrap::ScavTrap(const std::string& name)
 
     std::cout << "ScavTrap <" << _name << "> constructor is called." << std::endl;
 }
+
+ScavTrap::ScavTrap(const ScavTrap& st) {
+    std::cout << "ScavTrap copy constructor is called." << std::endl;
+    *this = st;
+}
+
+ScavTrap& ScavTrap::operator=(const ScavTrap& st) {
+    _name = st._name;
+    _hit = st._hit;
+    _energy = st._energy;
+    _damage = st._damage;
+    _attack_energy = st._attack_energy;
+
+    return *this;
+}
+
 
 ScavTrap::~ScavTrap() {
     std::cout << "ScavTrap <" << _name << "> destructor is called." << std::endl;
@@ -37,11 +57,11 @@ void ScavTrap::takeDamage(unsigned int amount) {
     int amount_int = static_cast<int>(amount);
     if (_hit - amount_int <= 0) {
         _hit = 0;
-        std::cout << "ScavTrap " << _name << " died..." << std::endl;
+        std::cout << "ScavTrap <" << _name << "> died..." << std::endl;
     }
     else {
         _hit -= amount_int;
-        std::cout << "ScavTrap " << _name << "'s Hit point is " << _hit << "." << std::endl;
+        std::cout << "ScavTrap <" << _name << ">'s Hit point is <" << _hit << ">." << std::endl;
     }
 }
 
@@ -50,7 +70,7 @@ void ScavTrap::beRepaired(unsigned int amount) {
 
     int amount_int = static_cast<int>(amount);
     _hit += amount_int;
-    std::cout << "ScavTrap " << _name << "'s Hit point is " << _hit << "." << std::endl;
+    std::cout << "ScavTrap <" << _name << ">'s Hit point is <" << _hit << ">." << std::endl;
 }
 
 void ScavTrap::guardGate() {

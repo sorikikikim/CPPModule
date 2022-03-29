@@ -37,7 +37,7 @@ Dog::~Dog()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Dog &				Dog::operator=( Dog const & dog )
+Dog& Dog::operator=( Dog const & dog )
 {
 	//지금 dog객체 포인터 (this)랑 복사 대상이 되는
 	//dog 변수에 담긴 객체의 포인터(&dog)이 같으면 완전히

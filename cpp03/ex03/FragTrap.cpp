@@ -1,5 +1,9 @@
 #include "FragTrap.hpp"
 
+FragTrap::FragTrap() {
+    std::cout << "FragTrap default constructor is called." << std::endl;
+}
+
 FragTrap::FragTrap(const std::string& name)
 :ClapTrap(name) {
     _hit = 100;
@@ -7,6 +11,21 @@ FragTrap::FragTrap(const std::string& name)
     _damage = 30;
     _attack_energy = 10;
     std::cout << "FragTrap <" << _name << "> constructor is called." << std::endl;
+}
+
+FragTrap::FragTrap(const FragTrap&ft) {
+    std::cout << "FragTrap copy constructor is called." << std::endl;
+    *this =ft;
+}
+
+FragTrap& FragTrap::operator=(const FragTrap& ft) {
+    _name = ft._name;
+    _hit = ft._hit;
+    _energy = ft._energy;
+    _damage = ft._damage;
+    _attack_energy = ft._attack_energy;
+
+    return *this;
 }
 
 FragTrap::~FragTrap() {

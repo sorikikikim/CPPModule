@@ -9,11 +9,16 @@
 
 class ClapTrap {
     public:
+        ClapTrap();
         ClapTrap(const std::string& name);
+        ClapTrap(const ClapTrap& ct);
+        ClapTrap& operator=(const ClapTrap& ct);
         ~ClapTrap();
+
         void attack(std::string const & target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
+
     private:
         std::string _name;
         int _hit; //hp, 체력

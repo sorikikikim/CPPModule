@@ -1,5 +1,9 @@
 #include "DiamondTrap.hpp"
 
+DiamondTrap::DiamondTrap() {
+    std::cout << "DiamondTrap default constructor is called." << std::endl;
+}
+
 DiamondTrap::DiamondTrap(const std::string& name)
 :ClapTrap(name + "_clap_name"), 
 ScavTrap(name),

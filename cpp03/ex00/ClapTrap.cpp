@@ -4,6 +4,10 @@
 
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap() {
+    std::cout << "ClapTrap default constructor is called." << std::endl;
+}
+
 ClapTrap::ClapTrap(const std::string& name)
 : _name(name),
 _hit(10),
@@ -11,6 +15,21 @@ _energy(10),
 _damage(0),
 _attack_energy(2) {
     std::cout << "ClapTrap <" << _name << "> constructor is called." << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap& ct) {
+    std::cout << "ClapTrap copy constructor is called." << std::endl;
+    *this = ct;
+}
+
+ClapTrap& ClapTrap::operator=(const ClapTrap& ct) {
+    _name = ct._name;
+    _hit = ct._hit;
+    _energy = ct._energy;
+    _damage = ct._damage;
+    _attack_energy = ct._attack_energy;
+
+    return *this;
 }
 
 ClapTrap::~ClapTrap() {
