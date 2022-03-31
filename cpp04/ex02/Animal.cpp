@@ -52,9 +52,6 @@ void Animal::setType(const std::string& type){
 	this->_type = type;
 }
 
-void Animal::makeSound() const{
-	std::cout<<"Animal type:("<<_type<<") make Sound!"<<std::endl;
-}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

@@ -46,7 +46,7 @@ Cat& Cat::operator=( Cat const & cat )
 }
 
 void Cat::makeSound() const{
-	std::cout<<"Cat type:("<<_type<<") make Sound!"<<std::endl;
+	std::cout<< "Cat type : (" <<_type<< ") make Sound!" <<std::endl;
 
 }
 

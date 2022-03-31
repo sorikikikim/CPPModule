@@ -13,6 +13,7 @@ int main()
 			animals[i] = new Cat();
 		std::cout << std::endl;
 	}
+	//Animal *a = new Animal(); -> x
 	std::cout << "-------------delete-----------" << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
