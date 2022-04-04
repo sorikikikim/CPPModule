@@ -39,9 +39,9 @@ Cat::~Cat()
 Cat& Cat::operator=( Cat const & cat )
 {
 	if ( this != &cat )
-	{
 		this->_type = cat.getType();
-	}
+	this->brain = new Brain(*(cat.brain));
+	
 	return *this;
 }
 

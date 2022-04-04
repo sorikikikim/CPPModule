@@ -19,6 +19,5 @@ int main()
 	{
 		delete animals[i];
 		std::cout << std::endl;
-
 	}
 }

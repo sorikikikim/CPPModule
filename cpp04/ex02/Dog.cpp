@@ -35,16 +35,16 @@ Dog::~Dog()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Dog &	Dog::operator=( Dog const & dog )
+Dog& Dog::operator=( Dog const & dog )
 {
 	if ( this != &dog )
-	{
 		this->_type = dog.getType();
-	}
+	this->brain = new Brain(*(dog.brain));
+	
 	return *this;
 }
 
-void 	Dog::makeSound() const{
+void Dog::makeSound() const{
 	std::cout<<"Dog type:("<<_type<<") make Sound!"<<std::endl;
 
 }
