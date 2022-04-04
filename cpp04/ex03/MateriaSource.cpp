@@ -65,6 +65,7 @@ AMateria *MateriaSource::createMateria(std::string const &type)
     return 0;
 }
 
+/*
 void MateriaSource::materiaCheck() {
     for (int i = 0; i < 4; i++) {
         std::cout << "materia[" << i << "]:";
@@ -74,6 +75,7 @@ void MateriaSource::materiaCheck() {
             std::cout << "null" << std::endl;
     }
 }
+*/
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

@@ -7,13 +7,12 @@ class WrongDog : public WrongAnimal
 {
 
 	public:
-
 		WrongDog();
 		WrongDog( WrongDog const & wrongDog );
 		~WrongDog();
 
-		WrongDog &		operator=( WrongDog const & wrongDog );
-		void 	makeSound() const;
+		WrongDog& operator=( WrongDog const & wrongDog );
+		void makeSound() const;
 
 };
 

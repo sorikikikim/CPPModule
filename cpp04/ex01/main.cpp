@@ -17,7 +17,7 @@ int main()
 	for (int i = 0; i < 4; i++)
 	{
 		delete animals[i];
-		std::cout<<std::endl;
+		std::cout << std::endl;
 
 	}
 }

@@ -77,6 +77,7 @@ void Character::use(int idx, ICharacter& target) {
     
 }
 
+/**
 void Character::inventoryCheck() {
     for (int i = 0; i < 4; i++) {
         std::cout << "inventory[" << i << "]:";
@@ -86,6 +87,8 @@ void Character::inventoryCheck() {
             std::cout << "null" << std::endl;
     }
 }
+**/
+
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */

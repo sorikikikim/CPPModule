@@ -10,7 +10,7 @@ int main() {
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
-	src->materiaCheck();
+	//src->materiaCheck();
 	std::cout << "===============" << std::endl;
 	ICharacter* me = new Character("me");
 	
@@ -19,7 +19,7 @@ int main() {
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
-	me->inventoryCheck();
+	//me->inventoryCheck();
 
 	ICharacter* bob = new Character("bob");
 	

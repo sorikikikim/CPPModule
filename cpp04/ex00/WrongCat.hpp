@@ -8,11 +8,11 @@ class WrongCat : public WrongAnimal
 
 	public:
 		WrongCat();
-		WrongCat( WrongCat const & wrongCat );
+		WrongCat( const WrongCat& wrongCat );
 		~WrongCat();
 
-		WrongCat &		operator=( WrongCat const & wrongCat );
-		void 	makeSound() const;
+		WrongCat& operator=( WrongCat const & wrongCat );
+		void makeSound() const;
 
 };
 

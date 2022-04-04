@@ -39,15 +39,14 @@ Cat::~Cat()
 Cat& Cat::operator=( Cat const & cat )
 {
 	if ( this != &cat )
-	{
 		this->_type = cat.getType();
-	}
+	this->brain = new Brain(*(cat.brain));
+	
 	return *this;
 }
 
 void Cat::makeSound() const{
-	std::cout<<"Cat type:("<<_type<<") make Sound!"<<std::endl;
-
+	std::cout << "Cat type : (" << _type << ") make Sound!" << std::endl;
 }
 
 

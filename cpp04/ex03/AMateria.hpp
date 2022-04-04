@@ -13,7 +13,7 @@ class AMateria
         std::string _type;
 
     public:
-        AMateria(); //declare privately to prevent instance creation
+        AMateria();
         AMateria(const AMateria& am);
         virtual ~AMateria();
         AMateria(std::string const & type);
