@@ -56,7 +56,7 @@ void Animal::setType(const std::string& type){
 
 //_type 하고 Animal클래스인거 나오게 출력.
 void Animal::makeSound() const{
-	std::cout<<"Animal type:("<<_type<<") make Sound!"<<std::endl;
+	std::cout << "Animal type : ( "<<_type<< ") make Sound!"<<std::endl;
 }
 
 /*

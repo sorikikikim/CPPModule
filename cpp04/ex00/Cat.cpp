@@ -11,7 +11,6 @@ Cat::Cat()
 {
 	_type = "Cat";
 	std::cout << "Cat Default Constructor created" << std::endl;
-
 }
 
 Cat::Cat( const Cat & cat )
@@ -36,23 +35,21 @@ Cat::~Cat()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Cat &				Cat::operator=( Cat const & cat )
+Cat& Cat::operator=( Cat const & cat )
 {
 	//지금 cat객체 포인터 (this)랑 복사 대상이 되는
 	//cat 변수에 담긴 객체의 포인터(&cat)이 같으면 완전히
 	//같은 객체라 복사하지 않고 나머지 경우만 복사하는 거야.
 	if ( this != &cat )
-	{
 		this->_type = cat.getType();
-	}
+
 	return *this;
 }
 
 //_type 변수가 protected라 getType함수쓰지않고
 //바로 쓸수있는거야
-void 	Cat::makeSound() const{
-	std::cout<<"Cat type:("<<_type<<") make Sound!"<<std::endl;
-
+void Cat::makeSound() const{
+	std::cout << "Cat type : (" << _type << ") make Sound!" << std::endl;
 }
 
 
