@@ -6,7 +6,7 @@
 
 
 Form::Form()
-: _name(""), _signed(false), _grade_sign(150), _grade_exe(150) {
+: _name(""), _signed(false), _grade_sign(100), _grade_exe(100) {
 	//std::cout << "Form Default Constructor called" << std::endl;
 }
 

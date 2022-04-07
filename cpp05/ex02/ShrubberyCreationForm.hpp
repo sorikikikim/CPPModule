@@ -14,6 +14,7 @@ class Bureaucrat;
 class ShrubberyCreationForm : public Form
 {
 	private:
+        const std::string _target;
 
 	public:
 		ShrubberyCreationForm();
@@ -31,7 +32,6 @@ class ShrubberyCreationForm : public Form
         std::string writeTree() const ;
 };
 
-std::ostream& operator<<(std::ostream& out, const ShrubberyCreationForm& b);
 
 
 #endif /* ********************************************************** BUREAUCRAT_H */

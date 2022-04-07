@@ -1,20 +1,20 @@
-#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
 
-ShrubberyCreationForm::ShrubberyCreationForm()
+RobotomyRequestForm::RobotomyRequestForm()
 :Form("", "_shrubbery", 145, 137) {
-	//std::cout << "ShrubberyCreationForm Default Constructor called" << std::endl;
+	//std::cout << "RobotomyRequestForm Default Constructor called" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string name) 
+RobotomyRequestForm::RobotomyRequestForm(std::string name) 
 : Form(name, "_shrubbery", 145, 137) {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& s) { 
-    *this = s;
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& f) { 
+    *this = f;
 }
 
 
@@ -23,7 +23,9 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& s) {
 */
 
 
-ShrubberyCreationForm::~ShrubberyCreationForm() {}
+RobotomyRequestForm::~RobotomyRequestForm() {
+	//std::cout << "RobotomyRequestForm Destructor called" << std::endl;
+}
 
 
 /*
@@ -31,10 +33,15 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {}
 */	
 
 
-ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& s)
+RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& s)
 {
 	Form::operator=(s);
 	return *this;
+}
+
+std::ostream& operator<<(std::ostream& out, const RobotomyRequestForm& f) {
+	return out << "name : " << f.getName() << ", signed : " << f.getSign() <<
+    ", grade to sign : " << f.getSignGrade() << ", grade to execute : " << f.getExeGrade() <<"."; 
 }
 
 
@@ -42,14 +49,22 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 ** --------------------------------- METHODS ----------------------------------
 */
 
-const char* ShrubberyCreationForm::MakeFileException::what() const throw() {
+// const char* RobotomyRequestForm::GradeTooHighException::what() const throw() {
+// 	return ("GradeTooHighException");
+// }
+
+// const char* RobotomyRequestForm::GradeTooLowException::what() const throw() {
+// 	return ("GradeTooLowException");
+// }
+
+const char* RobotomyRequestForm::MakeFileException::what() const throw() {
     return ("MakeFileException");
 }
-std::string ShrubberyCreationForm::makeFileName() const {
+std::string RobotomyRequestForm::makeFileName() const {
     return this->getName() + "_shrubbery";
 }
 
-std::string ShrubberyCreationForm::writeTree() const {
+std::string RobotomyRequestForm::writeTree() const {
 
 std::string tree = "    oxoxoo    ooxoo \n \
   ooxoxo oo  oxoxooo  \n \
@@ -68,7 +83,7 @@ std::string tree = "    oxoxoo    ooxoo \n \
   return tree;
 }
 
-void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
+void RobotomyRequestForm::execute(Bureaucrat const & executor) const {
     if (getExeGrade() < executor.getGrade())
         throw GradeTooLowException();
     std::string filename = makeFileName();
