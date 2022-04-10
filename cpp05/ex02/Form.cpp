@@ -31,9 +31,7 @@ Form::Form(const Form& f)
 */
 
 
-Form::~Form() {
-	//std::cout << "Form Destructor called" << std::endl;
-}
+Form::~Form() {}
 
 
 /*

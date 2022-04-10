@@ -22,7 +22,7 @@ class Form
 		Form();
 		Form(std::string name, std::string type, int grade_s, int grade_e);
 		Form(const Form& b);
-		~Form();
+		virtual ~Form();
 		Form& operator=(const Form& b);
 
 		//other class can be which inherit GradeTooHighException

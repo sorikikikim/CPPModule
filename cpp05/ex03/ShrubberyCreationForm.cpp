@@ -6,9 +6,7 @@
 
 
 ShrubberyCreationForm::ShrubberyCreationForm()
-:Form("", "_shrubbery", 145, 137) {
-	//std::cout << "ShrubberyCreationForm Default Constructor called" << std::endl;
-}
+:Form("", "_shrubbery", 145, 137) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string name) 
 : Form(name, "_shrubbery", 145, 137) {}

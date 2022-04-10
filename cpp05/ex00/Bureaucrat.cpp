@@ -6,10 +6,7 @@
 
 
 Bureaucrat::Bureaucrat()
-: _name(std::string("")),
-_grade(150) {
-	//std::cout << "Bureaucrat Default Constructor called" << std::endl;
-}
+: _name(std::string("")), _grade(150) {}
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) 
 : _name(name), _grade(grade) {
@@ -20,7 +17,7 @@ Bureaucrat::Bureaucrat(const std::string name, int grade)
 }
 
 Bureaucrat::Bureaucrat( const Bureaucrat& b)
-:_name(b.getName()), _grade(b.getGrade()) { //why
+:_name(b.getName()), _grade(b.getGrade()) {
 	if (_grade < 1) 
 		throw Bureaucrat::GradeTooHighException();
 	else if (_grade > 150)
@@ -32,11 +29,7 @@ Bureaucrat::Bureaucrat( const Bureaucrat& b)
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-
-Bureaucrat::~Bureaucrat() {
-	//std::cout << "Bureaucrat Destructor called" << std::endl;
-}
-
+Bureaucrat::~Bureaucrat() {}
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------

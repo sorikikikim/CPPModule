@@ -22,10 +22,6 @@ class Bureaucrat
 		~Bureaucrat();
 		Bureaucrat& operator=(const Bureaucrat& b);
 
-		//other class can be which inherit GradeTooHighException
-		//what() function returns const char* type -> return value can't change : const
-		//what() function performs override
-		//when inherit exception class, if override what() function, use throw()
 		class GradeTooHighException : public std::exception {
 			virtual const char* what() const throw();
 		};

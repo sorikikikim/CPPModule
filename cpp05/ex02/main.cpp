@@ -9,15 +9,14 @@ int main ()
 {
     std::cout << "----------------Shrubbery Creation Form----------------" << std::endl;
 	{
-		ShrubberyCreationForm form1 = ShrubberyCreationForm("sorkim3");
+		ShrubberyCreationForm form1 = ShrubberyCreationForm("sorkim1");
 		std::cout << form1 << std::endl;
-		Bureaucrat Bob("Bob3", 100);
+		Bureaucrat Bob("Bob1", 100);
 		std::cout << Bob << std::endl;
 		Bob.signForm(form1);
 		Bob.executeForm(form1);
 	}
 	std::cout << std::endl;
-    std::cout << std::endl;
 
     std::cout << "----------------Robotomy Request Form----------------" << std::endl;
 	{
@@ -29,20 +28,17 @@ int main ()
 		Bob.executeForm(form1);
 	}
     std::cout << std::endl;
-    std::cout << std::endl;
 
     std::cout << "----------------Presidential Pardon Form----------------" << std::endl;
 	{
-		PresidentialPardonForm form1 = PresidentialPardonForm("sorkim1");
+		PresidentialPardonForm form1 = PresidentialPardonForm("sorkim3");
 		std::cout << form1 << std::endl;
-		Bureaucrat Bob("Bob1", 5);
+		Bureaucrat Bob("Bob3", 5);
 		std::cout << Bob << std::endl;
 		Bob.signForm(form1);
 		Bob.executeForm(form1);
 	}
     std::cout << std::endl;
-    std::cout << std::endl;
-	
 
 	return (0);
 }
