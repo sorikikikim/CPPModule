@@ -1,26 +1,29 @@
-#ifndef BUREAUCRAT_HPP
-# define BUREAUCRAT_HPP
+#ifndef FORM_HPP
+# define FORM_HPP
 
 # include <iostream>
 # include <string>
 # include <exception>
 
-#include "Form.hpp"
+#include "Bureaucrat.hpp"
 
-class Form;
+class Bureaucrat;
 
-class Bureaucrat
+class Form
 {
 	private:
 		const std::string _name;
-		int _grade;
+		const std::string _type;
+		bool _signed;
+        const int _grade_sign;
+        const int _grade_exe;
 
 	public:
-		Bureaucrat();
-		Bureaucrat(const std::string name, int grade);
-		Bureaucrat(const Bureaucrat& b);
-		~Bureaucrat();
-		Bureaucrat& operator=(const Bureaucrat& b);
+		Form();
+		Form(std::string name, std::string type, int grade_s, int grade_e);
+		Form(const Form& b);
+		~Form();
+		Form& operator=(const Form& b);
 
 		//other class can be which inherit GradeTooHighException
 		//what() function returns const char* type -> return value can't change : const
@@ -35,16 +38,17 @@ class Bureaucrat
 		};
 
 		const std::string getName() const;
-		int getGrade() const;
+		const std::string getType() const;
+        bool getSign() const;
+		int getSignGrade() const;
+        int getExeGrade() const;
 
-		void incrementGrade();
-		void decrementGrade();
-
-		void signForm(Form& f);
-		void executeForm(const Form& f);
+		void beSigned(const Bureaucrat& b);
+		
+		virtual void execute(Bureaucrat const & executor) const = 0;
 };
 
-std::ostream& operator<<(std::ostream& out, const Bureaucrat& b);
+std::ostream& operator<<(std::ostream& out, const Form& b);
 
 
 #endif /* ********************************************************** BUREAUCRAT_H */
