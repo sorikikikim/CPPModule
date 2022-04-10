@@ -6,10 +6,7 @@
 
 
 Bureaucrat::Bureaucrat()
-: _name(std::string("")),
-_grade(150) {
-	//std::cout << "Bureaucrat Default Constructor called" << std::endl;
-}
+: _name(std::string("")), _grade(150) {}
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) 
 : _name(name), _grade(grade) {
@@ -33,9 +30,7 @@ Bureaucrat::Bureaucrat( const Bureaucrat& b)
 */
 
 
-Bureaucrat::~Bureaucrat() {
-	//std::cout << "Bureaucrat Destructor called" << std::endl;
-}
+Bureaucrat::~Bureaucrat() {}
 
 
 /*
@@ -94,7 +89,7 @@ void Bureaucrat::decrementGrade() {
 void Bureaucrat::signForm(Form& f) {
 	try {
 		f.beSigned(*this);
-		std::cout << this->getName() << "signed " << f.getName() << std::endl;
+		std::cout << this->getName() << " signed " << f.getName() << std::endl;
 	}
 	catch (std::exception& e) {
 		std::cout << this->getName() << " couldn’t sign " << f.getName() << " because " << e.what() << "." << std::endl;

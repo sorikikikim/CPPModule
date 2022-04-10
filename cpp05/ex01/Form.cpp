@@ -6,9 +6,7 @@
 
 
 Form::Form()
-: _name(""), _signed(false), _grade_sign(150), _grade_exe(150) {
-	//std::cout << "Form Default Constructor called" << std::endl;
-}
+: _name(""), _signed(false), _grade_sign(150), _grade_exe(150) {}
 
 Form::Form(std::string name, int grade_s, int grade_e) 
 : _name(name), _signed(false), _grade_sign(grade_s), _grade_exe(grade_e) {
@@ -33,9 +31,7 @@ Form::Form(const Form& f)
 */
 
 
-Form::~Form() {
-	//std::cout << "Form Destructor called" << std::endl;
-}
+Form::~Form() {}
 
 
 /*
@@ -48,7 +44,7 @@ Form& Form::operator=(const Form& f)
 	*const_cast<std::string *>(&_name) = f.getName();
 	_signed = f.getSign();
     *const_cast<int *>(&_grade_sign) = f.getSignGrade();
-    *const_cast<int *>(&_grade_sign) = f.getExeGrade(); //const cast ㅈㅏ체가 참조자와 포인터인 경우만 가능?..
+    *const_cast<int *>(&_grade_sign) = f.getExeGrade();
 	
 	return *this;
 }
