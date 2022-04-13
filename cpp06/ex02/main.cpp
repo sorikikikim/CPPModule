@@ -60,8 +60,9 @@ int main () {
 	Base *ptr = NULL;
     
 	ptr = generate();
+	std::cout << "------pointer------" << std::endl;
 	identify(ptr);
-	std::cout << "------------" << std::endl;
+	std::cout << "------reference------" << std::endl;
 	identify(*ptr);
 	if (ptr)
 		delete ptr;

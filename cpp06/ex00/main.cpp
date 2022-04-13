@@ -12,14 +12,15 @@ int main(int argc, char **argv) {
 		std::stringstream ss; //pick somethings that match with data type
 		double value;
 		float value_f;
-		char *stop = NULL;
 
 		input = argv[1];
 		if (input.length() == 1 && !std::isdigit(input[0]))
-			value = static_cast<double>(input[0]); //process of char
+			value = static_cast<double>(input[0]); //process of ascii
 		else
-			value = strtod(input.c_str(), &stop); //str to num
-		
+			value = atof(argv[1]); //except ascii
+	
+		//printf("%lf\n", value);
+
 		//to char
 		if (std::isnan(value) || std::isinf(value) || value < 0 || value > 127)
 			std::cout << "char: impossible" << std::endl;
@@ -37,6 +38,7 @@ int main(int argc, char **argv) {
 
 		//to float
 		value_f = static_cast<float>(value);
+		//printf("%f\n", value_f);
 		ss << "float: " << value_f;
 		input = ss.str();		
 		if (!std::isnan(value_f) && !std::isinf(value_f) && (input.find('.') == std::string::npos))
