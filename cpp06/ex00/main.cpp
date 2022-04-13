@@ -14,8 +14,11 @@ int main(int argc, char **argv) {
 		float value_f;
 
 		input = argv[1];
+		value = atof(argv[1]); //except ascii
+
 		if (input.length() == 1 && !std::isdigit(input[0]))
 			value = static_cast<double>(input[0]); //process of ascii
+	
 		else
 			value = atof(argv[1]); //except ascii
 	

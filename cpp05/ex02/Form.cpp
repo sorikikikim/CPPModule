@@ -45,7 +45,7 @@ Form& Form::operator=(const Form& f)
 	*const_cast<std::string *>(&_type) = f.getType();
 	_signed = f.getSign();
     *const_cast<int *>(&_grade_sign) = f.getSignGrade();
-    *const_cast<int *>(&_grade_sign) = f.getExeGrade(); //const cast ㅈㅏ체가 참조자와 포인터인 경우만 가능?..
+    *const_cast<int *>(&_grade_exe) = f.getExeGrade(); //const cast ㅈㅏ체가 참조자와 포인터인 경우만 가능?..
 	
 	return *this;
 }

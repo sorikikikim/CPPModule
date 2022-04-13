@@ -44,7 +44,7 @@ Form& Form::operator=(const Form& f)
 	*const_cast<std::string *>(&_name) = f.getName();
 	_signed = f.getSign();
     *const_cast<int *>(&_grade_sign) = f.getSignGrade();
-    *const_cast<int *>(&_grade_sign) = f.getExeGrade();
+    *const_cast<int *>(&_grade_exe) = f.getExeGrade();
 	
 	return *this;
 }
