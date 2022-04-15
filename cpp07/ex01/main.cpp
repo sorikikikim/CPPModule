@@ -1,53 +1,28 @@
-#include <iostream>
-#include <Array.hpp>
+#include "iter.hpp"
 
-#define MAX_VAL 750
-int main(int, char**)
+template <typename T>
+void iter(T* arr, int size, void (*f)(const T& t))
 {
-    Array<int> numbers(MAX_VAL);
-    int* mirror = new int[MAX_VAL];
-    srand(time(NULL));
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        const int value = rand();
-        numbers[i] = value;
-        mirror[i] = value;
-    }
-    //SCOPE
-    {
-        Array<int> tmp = numbers;
-        Array<int> test(tmp);
-    }
+	for (int i = 0; i < size; i++)
+		f(arr[i]);
+}
 
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        if (mirror[i] != numbers[i])
-        {
-            std::cerr << "didn't save the same value!!" << std::endl;
-            return 1;
-        }
-    }
-    try
-    {
-        numbers[-2] = 0;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    try
-    {
-        numbers[MAX_VAL] = 0;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
+template <typename T>
+void printTemplate(const T& t)
+{
+	std::cout << t << std::endl;
+}
 
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        numbers[i] = rand();
-    }
-    delete [] mirror;//
-    return 0;
+int	main()
+{
+	int size = 5;
+	int int_arr[5] = {1, 2, 3, 4, 5};
+	double double_arr[5] = {1.1111, 2.2222, 3.3333, 4.4444, 5.5555};
+	std::string string_arr[5] = { "one", "two", "three", "four", "five" };
+
+	iter(int_arr, size, printTemplate);
+	std::cout<<"---------"<<std::endl;
+	iter(double_arr, size, printTemplate);
+	std::cout<<"---------"<<std::endl;
+	iter(string_arr, size, printTemplate);
 }
