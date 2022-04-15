@@ -1,7 +1,35 @@
+#include "whatever.hpp"
+
+template <typename T>
+void	swap(T& a, T& b)
+{
+	T tmp(a);
+	a = b;
+	b = tmp;
+}
+
+template <typename T>
+const T&	max(const T&a, const T&b)
+{
+	if (a > b)
+		return (a);
+	else
+		return (b);
+}
+
+template <typename T>
+const T&	min(const T&a, const T&b)
+{
+	if (a < b)
+		return (a);
+	else
+		return (b);
+}
+
 int main( void ) {
     int a = 2;
     int b = 3;
-    ::swap( a, b );
+    ::swap( a, b ); //global
     std::cout << "a = " << a << ", b = " << b << std::endl;
     std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
     std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
