@@ -7,19 +7,18 @@
 template<typename T>
 class Array{
 	private:
-		T* mContent;
-		unsigned int	mSize;
+		T* _arr;
+		unsigned int _size;
 		class IndexOutOfRange : public std::exception{
-			const char* what() const throw()
-			{
+			const char* what() const throw() {
 				return ("IndexOutOfRange");
 			}
 		};
 	public:
 		Array<T>();
 		Array<T>(unsigned int size);
-		Array<T>(const Array& array);
-		Array&	operator=(const Array& array);
+		Array<T>(const Array& arr);
+		Array&	operator=(const Array& arr);
 		T&		operator[](int size);
 		const T& operator[](int size) const;
 		unsigned int	size() const;

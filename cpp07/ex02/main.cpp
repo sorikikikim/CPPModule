@@ -1,52 +1,83 @@
 #include "Array.hpp"
 
 #define MAX_VAL 750
-int main(int, char**)
+
+template <typename T>
+Array<T>::Array() : _arr(0), _size(0) {}
+
+template <typename T>
+Array<T>::Array(unsigned int size) : _arr(new T[size]), _size(size) {}
+
+template <typename T>
+Array<T>::Array(const Array<T>& arr) {
+	_arr = NULL;
+	_size = 0;
+	*this = arr;
+}
+
+template <typename T>
+Array<T>& Array<T>::operator=(const Array<T>& arr) {
+	delete [] _arr;
+
+	_arr = new T[arr.size()];
+	for (unsigned int i = 0; i < arr.size(); i++)
+		_arr[i] = arr[i];
+	_size = arr.size();
+	return (*this);
+}
+
+template <typename T>
+T& Array<T>::operator[](int size) {
+	if (size < 0 || size >= (int)_size)
+		throw IndexOutOfRange();
+	return (_arr[size]);
+}
+
+template <typename T>
+const T& Array<T>::operator[](int size) const {
+	if (size < 0 || size >= (int)_size)
+		throw IndexOutOfRange();
+	return (_arr[size]);
+}
+
+
+template <typename T>
+unsigned int Array<T>::size() const {
+	return (_size);
+}
+
+template <typename T>
+Array<T>::~Array() {
+	delete [] _arr;
+}
+
+int main()
 {
-    Array<int> numbers(MAX_VAL);
-    int* mirror = new int[MAX_VAL];
-    srand(time(NULL));
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        const int value = rand();
-        numbers[i] = value;
-        mirror[i] = value;
+    Array<int> arr(9);
+
+    try {
+		for (unsigned int i = 0; i < arr.size(); i++)
+			arr[i] = i;
     }
-    //SCOPE
-    {
-        Array<int> tmp = numbers;
-        Array<int> test(tmp);
+    catch(const std::exception&e) {
+		std::cerr << e.what() << '\n';
     }
 
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        if (mirror[i] != numbers[i])
-        {
-            std::cerr << "didn't save the same value!!" << std::endl;
-            return 1;
-        }
-    }
-    try
-    {
-        numbers[-2] = 0;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    try
-    {
-        numbers[MAX_VAL] = 0;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
+	for (unsigned int i = 0; i < arr.size(); i++)
+		std::cout << arr[i] << std::endl;
 
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        numbers[i] = rand();
-    }
-    delete [] mirror;//
-    return 0;
+	std::cout<<"copy version-----------------------"<<std::endl;
+	Array<int> arr_cpy(arr);
+
+	for (unsigned int i = 0; i < arr.size(); i++)
+		std::cout<<arr_cpy[i]<<std::endl;
+
+	std::cout<<"operator version-----------------------"<<std::endl;
+	Array<int> arr_operator;
+
+	arr_operator = arr_cpy;
+    
+	for (unsigned int i = 0; i < arr.size(); i++)
+		std::cout << arr_operator[i] << std::endl;
+	return (0);
 }
